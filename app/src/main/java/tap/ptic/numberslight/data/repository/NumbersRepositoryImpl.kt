@@ -10,7 +10,8 @@ import tap.ptic.numberslight.data.db.NumberDao
 import tap.ptic.numberslight.data.db.entity.NumberEntityItem
 
 class NumbersRepositoryImpl(
-    private val numberDao: NumberDao
+    private val numberDao: NumberDao,
+    private val numbersApiRepository: NumbersApiRepository
 ) : NumbersRepository {
 
     private val compositeDisposable = CompositeDisposable()
@@ -28,6 +29,7 @@ class NumbersRepositoryImpl(
     }
 
     override fun getNumbers(): Single<List<NumberEntityItem>> {
+        numbersApiRepository.getNumbers()
         return numberDao.getAllNumbers()
     }
 }
