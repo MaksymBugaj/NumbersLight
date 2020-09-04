@@ -1,8 +1,8 @@
-package tap.ptic.numberslight
+package tap.ptic.numberslight.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import dagger.android.support.DaggerAppCompatActivity
+import tap.ptic.numberslight.R
 
 class NumbersActivity : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
