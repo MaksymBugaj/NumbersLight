@@ -2,11 +2,11 @@ package tap.ptic.numberslight.di
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import tap.ptic.numberslight.NumbersActivity
+import tap.ptic.numberslight.ui.NumbersActivity
 
 @Module
 abstract class ActivityBuildersModule {
 
-    @ContributesAndroidInjector(modules = [FragmentBuildersModule::class])
+    @ContributesAndroidInjector
     abstract fun contributeMainActivity() : NumbersActivity
 }

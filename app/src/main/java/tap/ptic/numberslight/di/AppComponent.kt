@@ -6,6 +6,8 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import tap.ptic.numberslight.NumbersLite
+import tap.ptic.numberslight.di.fragments.ListNumbersModule
+import tap.ptic.numberslight.di.fragments.NumberDetailsModule
 import javax.inject.Singleton
 
 @Singleton
@@ -14,7 +16,10 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         ActivityBuildersModule::class,
         AppModule::class,
-        ViewModelFactoryModule::class
+        ViewModelFactoryModule::class,
+        NetworkModule::class,
+        ListNumbersModule::class,
+        NumberDetailsModule::class
     ]
 )
 interface AppComponent : AndroidInjector<NumbersLite> {

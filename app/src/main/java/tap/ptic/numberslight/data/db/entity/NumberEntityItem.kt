@@ -1,9 +1,10 @@
 package tap.ptic.numberslight.data.db.entity
 
 
-import com.google.gson.annotations.SerializedName
+import androidx.room.PrimaryKey
 
 data class NumberEntityItem(
     val image: String,
+    @PrimaryKey
     val name: String
 )
