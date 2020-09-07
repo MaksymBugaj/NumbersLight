@@ -1,12 +1,15 @@
 package tap.ptic.numberslight.data.repository
 
-import io.reactivex.Flowable
-import io.reactivex.Single
-import tap.ptic.numberslight.data.db.entity.NumberEntityItem
+import io.reactivex.subjects.PublishSubject
+import tap.ptic.numberslight.data.db.entity.NumberDetails
+import tap.ptic.numberslight.data.db.entity.NumberEntity
 
 interface NumbersApiRepository {
 
-    fun getNumbers(): Flowable<List<NumberEntityItem>>
+    val downloadedData: PublishSubject<NumberEntity>
+    val downloadedNumber: PublishSubject<NumberDetails>
 
-    fun getSpecificNumber(): Single<NumberEntityItem>
+    fun getNumbers()
+
+    fun getSpecificNumber(name: String)
 }

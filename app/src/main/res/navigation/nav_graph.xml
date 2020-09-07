@@ -9,5 +9,19 @@
         android:id="@+id/listFragment"
         android:name="tap.ptic.numberslight.ui.list.ListFragment"
         android:label="list_fragment"
-        tools:layout="@layout/list_fragment" />
+        tools:layout="@layout/list_fragment" >
+        <action
+            android:id="@+id/action_listFragment_to_numberDetailsFragment"
+            app:destination="@id/numberDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/numberDetailsFragment"
+        android:name="tap.ptic.numberslight.ui.list.NumberDetailsFragment"
+        android:label="number_details_fragment"
+        tools:layout="@layout/number_details_fragment" >
+
+        <argument
+            android:name="name"
+            app:argType="string"/>
+    </fragment>
 </navigation>

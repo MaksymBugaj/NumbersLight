@@ -1,11 +1,11 @@
 package tap.ptic.numberslight.data.repository
 
-import io.reactivex.Single
+import io.reactivex.subjects.PublishSubject
 import tap.ptic.numberslight.data.db.entity.NumberEntityItem
 
 interface NumbersRepository {
 
-    fun insertNumber(number: NumberEntityItem)
+    val numbers: PublishSubject<List<NumberEntityItem>>
 
-    fun getNumbers(): Single<List<NumberEntityItem>>
+    fun getNumbers()
 }
